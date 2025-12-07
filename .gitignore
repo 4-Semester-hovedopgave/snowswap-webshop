@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/public/ski.png
+/public/baselayer.png
+/public/jacket.png
+/public/googles.png
+/public/explore.png
+/public/midtlayer.png
+/public/logo.png
