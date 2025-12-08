@@ -5,8 +5,6 @@ export default function Home() {
   return (
     <div>
       <main className="p-6">
-        <h1 className="text-2xl font-bold">SnowSwap 1.0</h1>
-        <p className="text-slate-600 mt-2">Forsiden</p>
         <BentoGrid />
       </main>
     </div>

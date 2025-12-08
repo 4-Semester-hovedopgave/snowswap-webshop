@@ -5,9 +5,9 @@ export default function BentoGrid() {
     return (
         <section className="
             px-6
-            md:px-20 
-            lg:px-32 
-            xl:px-64
+            md:px-10 
+            lg:px-22 
+            xl:px-44
         ">
             <h1 className="text-xl md:text-1xl lg:text-2xl xl:text-3xl py-4">
                 EXPLORE & SHOP
@@ -29,6 +29,9 @@ export default function BentoGrid() {
                                 fill
                                 className="object-cover"
                             />
+                            <div className="absolute left-4 text-orange-400 text-2xl font-semibold drop-shadow-lg">
+                                Explore
+                            </div>
                         </Link>
                     </div>
 
@@ -42,6 +45,10 @@ export default function BentoGrid() {
                                 fill
                                 className="object-cover"
                             />
+
+                            <div className="absolute left-4 text-orange-400 text-2xl font-semibold drop-shadow-lg">
+                                Skies
+                            </div>
                         </Link>
                     </div>
 
@@ -54,6 +61,9 @@ export default function BentoGrid() {
                                 fill
                                 className="object-cover object-[center_20%]"
                             />
+                            <div className="absolute left-4 text-orange-400 text-2xl font-semibold drop-shadow-lg">
+                                Goggles
+                            </div>
                         </Link>
                     </div>
 
@@ -66,6 +76,9 @@ export default function BentoGrid() {
                                 fill
                                 className="object-cover"
                             />
+                            <div className="absolute left-4 text-orange-400 text-2xl font-semibold drop-shadow-lg">
+                                Shell Jackets
+                            </div>
                         </Link>
                     </div>
 
@@ -79,6 +92,9 @@ export default function BentoGrid() {
                                 fill
                                 className="object-cover"
                             />
+                            <div className="absolute left-4 text-orange-400 text-2xl font-semibold drop-shadow-lg">
+                                Midlayers
+                            </div>
                         </Link>
                     </div>
 
@@ -92,6 +108,9 @@ export default function BentoGrid() {
                                 fill
                                 className="object-cover"
                             />
+                            <div className="absolute left-4 text-orange-400 text-2xl font-semibold drop-shadow-lg">
+                                Baselayers
+                            </div>
                         </Link>
                     </div>
 
