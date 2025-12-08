@@ -24,8 +24,10 @@ export default function BentoGrid() {
                     <div className="relative md:col-span-4 md:row-span-3 h-40 md:h-auto">
                         <Link href="/products">
 
+
+
                             <Image
-                                src="/explore.png"
+                                src="public/explore.png"
                                 alt="Explore"
                                 fill
                                 className="object-cover"
