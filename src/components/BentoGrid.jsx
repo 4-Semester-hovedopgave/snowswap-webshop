@@ -27,9 +27,10 @@ export default function BentoGrid() {
                             <Image
                                 src="/explore.png"
                                 alt="Explore"
-                                fill
-                                className="object-cover"
+                                width={500}
+                                height={500}
                             />
+
                         </Link>
                     </div>
 
