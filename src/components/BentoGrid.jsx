@@ -21,7 +21,7 @@ export default function BentoGrid() {
                 ">
 
                     {/* EXPLORE */}
-                    <div className="relative md:col-span-4 md:row-span-3 aspect-4/3">
+                    <div className="relative md:col-span-4 md:row-span-3 h-40 md:h-auto">
                         <Link href="/products">
 
                             <Image
