@@ -31,7 +31,7 @@ export default function Hero() {
                 </p>
 
                 <a
-                    href="/collections/all"
+                    href="/products"
                     className="
                         mt-6 inline-block 
                         bg-zinc-700 text-white font-semibold

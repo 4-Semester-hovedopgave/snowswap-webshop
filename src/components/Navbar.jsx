@@ -7,78 +7,89 @@ import { useCartStore } from "@/store/useCartStore";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [openCategories, setOpenCategories] = useState(false);
     const cart = useCartStore((state) => state.cart);
 
     return (
         <>
             {/* TOPBAR */}
-            <nav className="flex items-center justify-between p-6 border-b">
+            <nav className="flex items-center justify-between h-20 px-6">
 
-                {/* LOGO - VENSTRE */}
+                {/* LOGO */}
                 <Link href="/">
-                    <Image src="/logo.png" alt="Logo" width={80} height={80} />
+                    <Image
+                        src="/logo.png"
+                        alt="Logo"
+                        width={80}
+                        height={80}
+                        className="h-12 w-auto object-contain"
+                    />
                 </Link>
 
-                {/* LINKS - HØJRE (SKJULT PÅ MOBIL) */}
-                <div className="hidden md:flex gap-6 text-sm font-medium">
-                    <Link href="/" className="hover:underline">Home</Link>
-                    <Link href="/products" className="hover:underline">Products</Link>
-                    <Link href="/trade-in" className="hover:underline">Trade-In</Link>
+                {/* DESKTOP MENU */}
+                <div className="hidden md:flex gap-6 items-center text-sm">
 
-                    <Link href="/cart" className="relative hover:underline">
+                    <Link href="/">Home</Link>
+                    <Link href="/products">Products</Link>
+
+                    {/* ENKEL CATEGORY DROPDOWN */}
+                    <div className="relative">
+                        <button onClick={() => setOpenCategories(!openCategories)}>
+                            Category ▼
+                        </button>
+
+                        {openCategories && (
+                            <div className="absolute left-0 mt-2 bg-white shadow rounded w-40 py-2 z-50">
+                                <Link href="/category/jackets" className="block px-4 py-2 hover:bg-gray-100">Jackets</Link>
+                                <Link href="/category/pants" className="block px-4 py-2 hover:bg-gray-100">Pants</Link>
+                                <Link href="/category/goggles" className="block px-4 py-2 hover:bg-gray-100">Goggles</Link>
+                                <Link href="/category/accessories" className="block px-4 py-2 hover:bg-gray-100">Accessories</Link>
+                            </div>
+                        )}
+                    </div>
+
+                    <Link href="/trade-in">Trade-In</Link>
+
+                    {/* CART */}
+                    <Link href="/cart" className="relative">
                         Cart
                         {cart.length > 0 && (
-                            <span className="
-                                absolute -top-2 -right-3 
-                                bg-red-500 text-white text-xs 
-                                w-5 h-5 flex items-center justify-center 
-                                rounded-full
-                            ">
+                            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                                 {cart.length}
                             </span>
                         )}
                     </Link>
                 </div>
 
-                {/* BURGER IKON - KUN PÅ MOBIL */}
-                <button
-                    className="md:hidden text-3xl"
-                    onClick={() => setOpen(!open)}
-                >
+                {/* BURGER - MOBILE ONLY */}
+                <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
                     ☰
                 </button>
             </nav>
 
-            {/* MOBIL MENU - VISES KUN NÅR DEN ER ÅBEN */}
+            {/* MOBILE MENU */}
             {open && (
-                <div className="flex flex-col gap-4 p-4 border-b md:hidden bg-white">
+                <div className="md:hidden flex flex-col gap-4 p-4 bg-white">
 
-                    <Link href="/" className="hover:underline" onClick={() => setOpen(false)}>
-                        Home
-                    </Link>
+                    <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+                    <Link href="/products" onClick={() => setOpen(false)}>Products</Link>
+                    <Link href="/trade-in" onClick={() => setOpen(false)}>Trade-In</Link>
 
-                    <Link href="/products" className="hover:underline" onClick={() => setOpen(false)}>
-                        Products
-                    </Link>
+                    {/* SIMPLE CATEGORY LIST */}
+                    <Link href="/category/jackets" onClick={() => setOpen(false)}>Jackets</Link>
+                    <Link href="/category/pants" onClick={() => setOpen(false)}>Pants</Link>
+                    <Link href="/category/goggles" onClick={() => setOpen(false)}>Goggles</Link>
+                    <Link href="/category/accessories" onClick={() => setOpen(false)}>Accessories</Link>
 
-                    <Link href="/trade-in" className="hover:underline" onClick={() => setOpen(false)}>
-                        Trade-In
-                    </Link>
-
-                    <Link href="/cart" className="relative hover:underline" onClick={() => setOpen(false)}>
+                    {/* CART */}
+                    <Link href="/cart" onClick={() => setOpen(false)} className="relative">
                         Cart
                         {cart.length > 0 && (
-                            <span className="
-                                absolute -top-2 left-20 
-                                bg-red-500 text-white text-xs 
-                                w-5 h-5 flex items-center justify-center 
-                                rounded-full
-                            ">
+                            <span className="absolute -top-2 left-20 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                                 {cart.length}
                             </span>
                         )}
                     </Link>
-
                 </div>
             )}
         </>
