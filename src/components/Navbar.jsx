@@ -30,35 +30,12 @@ export default function Navbar() {
                 <div className="hidden md:flex gap-6 items-center text-sm">
 
                     <Link href="/">Home</Link>
-                    <Link href="/products">Products</Link>
+                    <Link href="https://www.anarikkelarsen.dk/collections">Shop</Link>
 
-                    {/* ENKEL CATEGORY DROPDOWN */}
-                    <div className="relative">
-                        <button onClick={() => setOpenCategories(!openCategories)}>
-                            Category ▼
-                        </button>
 
-                        {openCategories && (
-                            <div className="absolute left-0 mt-2 bg-white shadow rounded w-40 py-2 z-50">
-                                <Link href="/category/jackets" className="block px-4 py-2 hover:bg-gray-100">Jackets</Link>
-                                <Link href="/category/pants" className="block px-4 py-2 hover:bg-gray-100">Pants</Link>
-                                <Link href="/category/goggles" className="block px-4 py-2 hover:bg-gray-100">Goggles</Link>
-                                <Link href="/category/accessories" className="block px-4 py-2 hover:bg-gray-100">Accessories</Link>
-                            </div>
-                        )}
-                    </div>
 
-                    <Link href="/trade-in">Trade-In</Link>
+                    <Link href="https://www.anarikkelarsen.dk/pages/trade-in">Trade-In</Link>
 
-                    {/* CART */}
-                    <Link href="/cart" className="relative">
-                        Cart
-                        {cart.length > 0 && (
-                            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                                {cart.length}
-                            </span>
-                        )}
-                    </Link>
                 </div>
 
                 {/* BURGER - MOBILE ONLY */}
