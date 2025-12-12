@@ -3,20 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { useCartStore } from "@/store/useCartStore";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
-    const [openCategories, setOpenCategories] = useState(false);
-    const cart = useCartStore((state) => state.cart);
 
     return (
         <>
-            {/* TOPBAR */}
-            <nav className="flex items-center justify-between h-20 px-6">
+            <nav className="grid grid-cols-3 items-center h-20 px-4 lg:px-0 lg:max-w-screen-lg lg:mx-auto">
 
-                {/* LOGO */}
-                <Link href="/">
+                {/* LOGO – venstre */}
+                <Link href="/" className="justify-self-start">
                     <Image
                         src="/logo.png"
                         alt="Logo"
@@ -26,49 +22,29 @@ export default function Navbar() {
                     />
                 </Link>
 
-                {/* DESKTOP MENU */}
-                <div className="hidden md:flex gap-6 items-center text-sm">
-
-                    <Link href="/">Home</Link>
-                    <Link href="https://www.anarikkelarsen.dk/collections">Shop</Link>
-
-
-
-                    <Link href="https://www.anarikkelarsen.dk/pages/trade-in">Trade-In</Link>
-
+                {/* MENU – i kolonne 3 */}
+                <div className="hidden md:flex gap-6 items-center justify-self-end col-start-3 text-sm">
+                    <Link className="tracking-widest font-medium" href="https://www.anarikkelarsen.dk" target="_blank">TRADE-IN & SHOP NOW</Link>
                 </div>
 
-                {/* BURGER - MOBILE ONLY */}
-                <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
+                {/* BURGER – mobil, stadig i højre side */}
+                <button
+                    className="md:hidden text-3xl justify-self-end col-start-3"
+                    onClick={() => setOpen(!open)}
+                >
                     ☰
                 </button>
+
             </nav>
 
             {/* MOBILE MENU */}
             {open && (
                 <div className="md:hidden flex flex-col gap-4 p-4 bg-white">
-
-                    <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-                    <Link href="/products" onClick={() => setOpen(false)}>Products</Link>
-                    <Link href="/trade-in" onClick={() => setOpen(false)}>Trade-In</Link>
-
-                    {/* SIMPLE CATEGORY LIST */}
-                    <Link href="/category/jackets" onClick={() => setOpen(false)}>Jackets</Link>
-                    <Link href="/category/pants" onClick={() => setOpen(false)}>Pants</Link>
-                    <Link href="/category/goggles" onClick={() => setOpen(false)}>Goggles</Link>
-                    <Link href="/category/accessories" onClick={() => setOpen(false)}>Accessories</Link>
-
-                    {/* CART */}
-                    <Link href="/cart" onClick={() => setOpen(false)} className="relative">
-                        Cart
-                        {cart.length > 0 && (
-                            <span className="absolute -top-2 left-20 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                                {cart.length}
-                            </span>
-                        )}
-                    </Link>
+                    <Link href="https://www.anarikkelarsen.dk/collections" target="_blank" onClick={() => setOpen(false)}>Shop</Link>
+                    <Link href="https://www.anarikkelarsen.dk/pages/trade-in" target="_blank" onClick={() => setOpen(false)}>Trade-In</Link>
                 </div>
             )}
+
         </>
     );
 }
