@@ -12,6 +12,11 @@ const montserrat = Montserrat({
 export const metadata = {
   title: "SnowSwap",
   description: "Good Gear Should Never Go to Waste",
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

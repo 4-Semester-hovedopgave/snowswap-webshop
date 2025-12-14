@@ -1,73 +1,83 @@
-import Image from "next/image";
-import Link from "next/link";
+
 
 import { FaInstagram } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 
+
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Footer() {
     return (
-        <footer className="bg-sky-100 text-black mt-10">
-            <div className="px-6 md:px-20 lg:px-32 xl:px-64 py-10">
+        <footer className="px-6 py-12">
+            <div className="mx-auto max-w-6xl">
 
-                {/* GRID WRAPPER */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                {/* GRID */}
+                <div className="grid gap-10 md:grid-cols-3">
 
-                    {/* Kollone 1 — Logo + SoMe */}
+                    {/* CONTACT */}
                     <div>
+                        <h3 className="mb-4 text-sm font-semibold tracking-widest uppercase">
+                            Contact us
+                        </h3>
+
+                        <ul className="space-y-3 text-sm text-slate-700">
+                            <li>Refshalevej 151<br />1432 Copenhagen, Denmark</li>
+                            <li>
+                                <a href="mailto:info@snowswap.com" className="underline">
+                                    info@snowswap.com
+                                </a>
+                            </li>
+                            <li>+45 12 34 56 78</li>
+                        </ul>
+                    </div>
+
+                    {/* LOGO + SOCIAL */}
+                    <div className="flex flex-col items-start md:items-center">
                         <Image
                             src="/logo.png"
-                            alt="SnowSwap logo"
-                            width={90}
-                            height={90}
+                            alt="SnowSwap"
+                            width={120}
+                            height={40}
                             className="mb-4"
                         />
 
-                        <div className="flex gap-4 mt-2">
-                            <Link href="https://instagram.com">
-                                <FaInstagram />
-                            </Link>
+                        <p className="mb-4 text-sm">@snowswap</p>
 
-                            <Link href="https://tiktok.com">
-                                <FaTiktok />
-
-                            </Link>
-
-                            <Link href="https://facebook.com">
-                                <FaFacebook />
-                            </Link>
+                        <div className="flex gap-4">
+                            <Link href="#"><FaFacebook /></Link>
+                            <Link href="#"><FaTiktok /></Link>
+                            <Link href="#"><FaInstagram /></Link>
                         </div>
                     </div>
 
-                    {/* Kollone 2 — links */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+                    {/* LINKS */}
+                    <div className="grid grid-cols-2 gap-8">
+                        <div>
+                            <h3 className="mb-4 text-sm font-semibold tracking-widest uppercase">
+                                Help
+                            </h3>
+                            <ul className="space-y-2 text-sm">
+                                <li><Link href="#">FAQ</Link></li>
+                                <li><Link href="#">Selling</Link></li>
+                                <li><Link href="#">Buying</Link></li>
+                                <li><Link href="#">Trust & safety</Link></li>
+                            </ul>
+                        </div>
 
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="/" className="hover:underline">Home</Link></li>
-                            <li><Link href="/products" className="hover:underline">Products</Link></li>
-                            <li><Link href="/trade-in" className="hover:underline">Trade-In</Link></li>
-                            <li><Link href="/about" className="hover:underline">About SnowSwap</Link></li>
-                            <li><Link href="/cart" className="hover:underline">Cart</Link></li>
-                        </ul>
+                        <div>
+                            <h3 className="mb-4 text-sm font-semibold tracking-widest uppercase">
+                                Discover
+                            </h3>
+                            <ul className="space-y-2 text-sm">
+                                <li><Link href="#">About us</Link></li>
+                                <li><Link href="#">How it works</Link></li>
+                                <li><Link href="#">Equipment guide</Link></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    {/* Kollone 3 — Information */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Information</h3>
-
-                        <ul className="space-y-2 text-sm">
-                            <li><Link href="/contact" className="hover:underline">Contact</Link></li>
-                            <li><Link href="/support" className="hover:underline">Support</Link></li>
-                            <li><Link href="/terms" className="hover:underline">Terms & Conditions</Link></li>
-                            <li><Link href="/privacy" className="hover:underline">Privacy Policy</Link></li>
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Copyright */}
-                <div className="border-t border-neutral-700 mt-10 pt-4 text-xs text-neutral-400 text-center">
-                    © {new Date().getFullYear()} SnowSwap — All rights reserved.
                 </div>
             </div>
         </footer>

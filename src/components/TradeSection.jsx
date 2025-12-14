@@ -13,7 +13,7 @@ export default function TradeSection() {
                     {/* VENSTRE: billede */}
                     <div className="relative w-full h-[380px]">
                         <Image
-                            src="/jacket.png"   // byt til dit eget billede
+                            src="/skihill.png"   // byt til dit eget billede
                             alt="Skier on a slope"
                             fill
                             className="object-cover rounded-sm"
@@ -26,11 +26,8 @@ export default function TradeSection() {
                             TRADE IN & SHOP
                         </h2>
 
-                        <p className="mt-6 text-lg md:text-xl uppercase tracking-wide leading-snug max-w-md">
-                            GO TO OUR SHOP<br />
-                            AND SEE ALL<br />
-                            THE AMAZING ITEMS<br />
-                            THAT WE HAVE
+                        <p className="mt-6 text-md md:text-xl tracking-wide leading-snug max-w-md">
+                            Go to our shop and see all the amazing items that we have
                         </p>
 
                         <div className="mt-8 flex flex-wrap gap-4">
