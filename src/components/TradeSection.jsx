@@ -7,26 +7,23 @@ export default function TradeSection() {
     return (
         <section className="py-16">
             <div className="max-w-6xl mx-auto px-6">
-                {/* GRID: billede venstre, tekst højre */}
                 <div className="grid md:grid-cols-2 gap-10 items-center">
 
-                    {/* VENSTRE: billede */}
                     <div className="relative w-full h-[380px]">
                         <Image
-                            src="/skihill.png"   // byt til dit eget billede
+                            src="/skihill.png"
                             alt="Skier on a slope"
                             fill
                             className="object-cover rounded-sm"
                         />
                     </div>
 
-                    {/* HØJRE: tekst + knapper */}
                     <div>
                         <h2 className="text-3xl md:text-5xl font-extrabold tracking-wide text-slate-900">
                             TRADE IN & SHOP
                         </h2>
 
-                        <p className="mt-6 text-md md:text-xl tracking-wide leading-snug max-w-md">
+                        <p className="mt-6 text-base md:text-xl tracking-wide leading-snug max-w-md">
                             Go to our shop and see all the amazing items that we have
                         </p>
 
